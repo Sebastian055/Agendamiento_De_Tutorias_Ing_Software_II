@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Administrador - Sistema de Tutorías</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styleAdmin.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="header">
+        <h1>👑 Panel de Administrador</h1>
+        <div class="user-info">
+          <span id="user-name">👋 Cargando...</span>
+          <button id="btn-logout" class="btn-logout">Cerrar sesión</button>
+        </div>
+      </div>
+
+      <!-- Tabs de navegación -->
+      <div class="tabs">
+        <button id="tab-reportes" class="tab-btn active">
+          📊 Reportes y Estadísticas
+        </button>
+        <button id="tab-usuarios" class="tab-btn">👥 Gestionar Usuarios</button>
+      </div>
+
+      <!-- Sección 1: Reportes y Estadísticas -->
+      <div id="reportes-section" class="section">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <h3>👥 Total Usuarios</h3>
+            <p id="total-usuarios">0</p>
+          </div>
+          <div class="stat-card">
+            <h3>🎓 Estudiantes</h3>
+            <p id="total-estudiantes">0</p>
+          </div>
+          <div class="stat-card">
+            <h3>🎓 Tutores Estudiantes</h3>
+            <p id="total-tutores-estudiantes">0</p>
+          </div>
+          <div class="stat-card">
+            <h3>👨‍🏫 Tutores Profesores</h3>
+            <p id="total-tutores-profesores">0</p>
+          </div>
+          <div class="stat-card">
+            <h3>📅 Total Reservas</h3>
+            <p id="total-reservas">0</p>
+          </div>
+          <div class="stat-card">
+            <h3>⭐ Total Calificaciones</h3>
+            <p id="total-calificaciones">0</p>
+          </div>
+          <div class="stat-card">
+            <h3>📊 Promedio General</h3>
+            <p id="promedio-general">0</p>
+          </div>
+        </div>
+
+        <!-- Reservas por estado -->
+        <div class="chart-section">
+          <h3>📋 Reservas por Estado</h3>
+          <div class="estados-grid">
+            <div class="estado-card pendiente">
+              <span>⏳ Pendientes</span>
+              <strong id="reservas-pendientes">0</strong>
+            </div>
+            <div class="estado-card confirmada">
+              <span>✅ Confirmadas</span>
+              <strong id="reservas-confirmadas">0</strong>
+            </div>
+            <div class="estado-card completada">
+              <span>📝 Completadas</span>
+              <strong id="reservas-completadas">0</strong>
+            </div>
+            <div class="estado-card cancelada">
+              <span>❌ Canceladas</span>
+              <strong id="reservas-canceladas">0</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sección 2: Gestionar Usuarios -->
+      <div id="usuarios-section" class="section hidden">
+        <div class="filters">
+          <select id="filter-role">
+            <option value="all">Todos los usuarios</option>
+            <option value="student">Estudiantes</option>
+            <option value="tutor_student">Tutores Estudiantes</option>
+            <option value="tutor_teacher">Tutores Profesores</option>
+            <option value="admin">Administradores</option>
+          </select>
+          <input
+            type="text"
+            id="search-user"
+            placeholder="Buscar por nombre o email"
+          />
+          <button id="btn-search-user" class="btn-primary">Buscar</button>
+        </div>
+        <div id="usuarios-container" class="usuarios-list"></div>
+      </div>
+    </div>
+
+    <!-- Modal para editar usuario -->
+    <div id="modal-editar" class="modal hidden">
+      <div class="modal-content">
+        <h3>✏️ Editar Usuario</h3>
+        <div class="form-group">
+          <label>Nombre</label>
+          <input type="text" id="edit-nombre" />
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="edit-email" />
+        </div>
+        <div class="form-group">
+          <label>Rol</label>
+          <select id="edit-role">
+            <option value="student">Estudiante</option>
+            <option value="tutor_student">Tutor Estudiante</option>
+            <option value="tutor_teacher">Tutor Profesor</option>
+            <option value="admin">Administrador</option>
+          </select>
+        </div>
+        <div class="form-group" id="edit-materia-group">
+          <label>Materia (para tutores)</label>
+          <input
+            type="text"
+            id="edit-materia"
+            placeholder="Materia que dicta"
+          />
+        </div>
+        <div class="form-group" id="edit-promedio-group">
+          <label>Promedio (para tutores estudiantes)</label>
+          <input type="number" id="edit-promedio" step="0.1" min="0" max="5" />
+        </div>
+        <div class="modal-buttons">
+          <button id="btn-guardar" class="btn-primary">Guardar</button>
+          <button id="btn-cancelar-modal" class="btn-secondary">
+            Cancelar
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/admin.js"></script>
+  </body>
+</html>

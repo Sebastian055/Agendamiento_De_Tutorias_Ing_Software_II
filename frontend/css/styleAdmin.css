@@ -1,0 +1,310 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background: #f5f7fa;
+  color: #1a2a3a;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #0a3b5c, #1a6d8f);
+  color: white;
+  padding: 20px 32px;
+  border-radius: 20px;
+  margin-bottom: 32px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn-logout {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.tab-btn {
+  background: white;
+  border: 1px solid #ddd;
+  padding: 12px 24px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+
+.tab-btn.active {
+  background: #1a6d8f;
+  color: white;
+  border-color: #1a6d8f;
+}
+
+/* Secciones */
+.section {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.section.hidden {
+  display: none;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.stat-card {
+  background: #f8f9fa;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+}
+
+.stat-card h3 {
+  font-size: 14px;
+  color: #6c7a8a;
+  margin-bottom: 10px;
+}
+
+.stat-card p {
+  font-size: 32px;
+  font-weight: bold;
+  color: #1a6d8f;
+}
+
+/* Estados Grid */
+.chart-section h3 {
+  margin-bottom: 16px;
+  color: #0a3b5c;
+}
+
+.estados-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.estado-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  border-left: 4px solid;
+}
+
+.estado-card.pendiente {
+  border-left-color: #f59e0b;
+}
+.estado-card.confirmada {
+  border-left-color: #10b981;
+}
+.estado-card.completada {
+  border-left-color: #3b82f6;
+}
+.estado-card.cancelada {
+  border-left-color: #ef4444;
+}
+
+.estado-card span {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.estado-card strong {
+  font-size: 24px;
+}
+
+/* Filtros */
+.filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.filters select,
+.filters input {
+  padding: 10px 16px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  min-width: 180px;
+}
+
+/* Lista de usuarios */
+.usuarios-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.usuario-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.usuario-info h4 {
+  margin-bottom: 4px;
+}
+
+.usuario-info p {
+  font-size: 13px;
+  color: #6c7a8a;
+}
+
+.usuario-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-edit,
+.btn-delete {
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-edit {
+  background: #1a6d8f;
+  color: white;
+}
+
+.btn-delete {
+  background: #ef4444;
+  color: white;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal.hidden {
+  display: none;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 20px;
+  padding: 28px;
+  width: 90%;
+  max-width: 450px;
+}
+
+.modal-content h3 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.modal-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.btn-primary {
+  background: #1a6d8f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+  .header {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  .estados-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .usuario-card {
+    flex-direction: column;
+    text-align: center;
+  }
+}

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard Estudiante - Sistema de Tutorías</title>
+    <link rel="stylesheet" href="css/styleApp.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header con bienvenida y logout -->
+      <div class="header">
+        <h1>📚 Sistema de Tutorías</h1>
+        <div class="user-info">
+          <span id="user-name"></span>
+          <button id="btn-logout" class="btn-logout">Cerrar sesión</button>
+        </div>
+      </div>
+
+      <!-- Búsqueda de tutores -->
+      <div class="search-section">
+        <h2>🔍 Buscar Tutores</h2>
+        <div class="filters">
+          <input
+            type="text"
+            id="search-materia"
+            placeholder="Buscar por materia (ej: Matemáticas)"
+          />
+          <input
+            type="text"
+            id="search-nombre"
+            placeholder="Buscar por nombre"
+          />
+          <input
+            type="number"
+            id="search-promedio"
+            placeholder="Promedio mínimo (0-5)"
+            step="0.1"
+            min="0"
+            max="5"
+          />
+          <button id="btn-search" class="btn-primary">Buscar</button>
+        </div>
+        <div id="tutors-container" class="tutors-list"></div>
+      </div>
+
+      <!-- Reservar tutoría -->
+      <div class="booking-section">
+        <h2>📅 Reservar Tutoría</h2>
+        <div class="booking-form">
+          <select id="res-tutor" class="tutor-select">
+            <option value="">Selecciona un tutor primero</option>
+          </select>
+          <input type="date" id="res-fecha" />
+          <input type="time" id="res-hora" />
+          <button id="btn-book" class="btn-success">Confirmar Reserva</button>
+        </div>
+      </div>
+
+      <!-- Mis Reservas -->
+      <div class="reservations-section">
+        <h2>📋 Mis Reservas</h2>
+        <button id="btn-refresh" class="btn-secondary">Actualizar</button>
+        <div id="reservas-container" class="reservations-list"></div>
+      </div>
+    </div>
+
+    <!-- Modal para calificar -->
+    <div id="modal-calificar" class="modal hidden">
+      <div class="modal-content">
+        <h3>⭐ Calificar Tutoría</h3>
+        <p id="modal-tutor-name"></p>
+        <select id="calificacion-rating">
+          <option value="5">⭐⭐⭐⭐⭐ 5 - Excelente</option>
+          <option value="4">⭐⭐⭐⭐ 4 - Muy bueno</option>
+          <option value="3">⭐⭐⭐ 3 - Bueno</option>
+          <option value="2">⭐⭐ 2 - Regular</option>
+          <option value="1">⭐ 1 - Malo</option>
+        </select>
+        <textarea
+          id="calificacion-comentario"
+          placeholder="Escribe tu comentario (opcional)"
+          rows="3"
+        ></textarea>
+        <div class="modal-buttons">
+          <button id="btn-submit-calificacion" class="btn-primary">
+            Enviar
+          </button>
+          <button id="btn-close-modal" class="btn-secondary">Cancelar</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

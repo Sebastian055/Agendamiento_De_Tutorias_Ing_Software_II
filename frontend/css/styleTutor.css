@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background: #f5f7fa;
+  color: #1a2a3a;
+  line-height: 1.5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(135deg, #0a3b5c, #1a6d8f);
+  color: white;
+  padding: 20px 32px;
+  border-radius: 20px;
+  margin-bottom: 32px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+#user-name {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px 16px;
+  border-radius: 40px;
+}
+
+.btn-logout {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 40px;
+  cursor: pointer;
+}
+
+/* Stats Cards */
+.stats-section {
+  margin-bottom: 32px;
+}
+
+.stats-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  margin-top: 16px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.stat-card h3 {
+  font-size: 14px;
+  color: #6c7a8a;
+  margin-bottom: 10px;
+}
+
+.stat-card p {
+  font-size: 32px;
+  font-weight: bold;
+  color: #1a6d8f;
+}
+
+/* Secciones */
+.tutorias-section,
+.perfil-section,
+.horarios-section {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+  color: #0a3b5c;
+  margin-bottom: 20px;
+  font-size: 1.3rem;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 12px;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 8px 20px;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 30px;
+  transition: all 0.2s;
+}
+
+.tab-btn.active {
+  background: #1a6d8f;
+  color: white;
+}
+
+/* Tarjetas de tutorías */
+.tutorias-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.tutoria-card {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 16px;
+  border-left: 4px solid #1a6d8f;
+}
+
+.tutoria-card.estado-pendiente {
+  border-left-color: #f59e0b;
+}
+
+.tutoria-card.estado-completada {
+  border-left-color: #10b981;
+}
+
+.tutoria-card.estado-cancelada {
+  border-left-color: #ef4444;
+}
+
+.tutoria-card h4 {
+  margin-bottom: 8px;
+  color: #1a2a3a;
+}
+
+.tutoria-card p {
+  font-size: 13px;
+  color: #5a6a7a;
+  margin: 4px 0;
+}
+
+/* Formulario perfil */
+.perfil-form {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.form-group {
+  flex: 1;
+}
+
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* Horarios */
+.horario-form {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.horario-form select,
+.horario-form input {
+  padding: 10px 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.horarios-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.horario-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.btn-eliminar-horario {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Botones generales */
+button {
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background: #1a6d8f;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+}
+
+.btn-success {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 8px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    padding: 16px;
+  }
+
+  .header {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .stats-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .perfil-form,
+  .horario-form {
+    flex-direction: column;
+  }
+
+  .perfil-form button,
+  .horario-form button {
+    width: 100%;
+  }
+}

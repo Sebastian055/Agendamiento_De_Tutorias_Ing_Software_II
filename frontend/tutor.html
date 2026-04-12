@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tutor Estudiante - Sistema de Tutorías</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styleTutor.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <div class="header">
+        <h1>📚 Sistema de Tutorías - Tutor Estudiante</h1>
+        <div class="user-info">
+          <span id="user-name">👋 Cargando...</span>
+          <button id="btn-logout" class="btn-logout">Cerrar sesión</button>
+        </div>
+      </div>
+
+      <!-- Dashboard de estadísticas -->
+      <div class="stats-section">
+        <h2>📊 Mi Dashboard</h2>
+        <div class="stats-cards">
+          <div class="stat-card">
+            <h3>📅 Total Tutorías</h3>
+            <p id="total-tutorias">0</p>
+          </div>
+          <div class="stat-card">
+            <h3>⭐ Promedio Calificaciones</h3>
+            <p id="promedio-calificaciones">0</p>
+          </div>
+          <div class="stat-card">
+            <h3>📖 Materia</h3>
+            <p id="materia-tutor">No especificada</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sección 1: Mis Tutorías -->
+      <div class="tutorias-section">
+        <h2>📋 Mis Tutorías</h2>
+        <div class="tabs">
+          <button id="tab-pendientes" class="tab-btn active">
+            ⏳ Pendientes
+          </button>
+          <button id="tab-completadas" class="tab-btn">✅ Completadas</button>
+          <button id="tab-canceladas" class="tab-btn">❌ Canceladas</button>
+        </div>
+        <div id="tutorias-container" class="tutorias-list"></div>
+      </div>
+
+      <!-- Sección 2: Gestionar Perfil -->
+      <div class="perfil-section">
+        <h2>⚙️ Gestionar Perfil</h2>
+        <div class="perfil-form">
+          <div class="form-group">
+            <label for="perfil-materia">Materia que dicto</label>
+            <input
+              type="text"
+              id="perfil-materia"
+              placeholder="Ej: Matemáticas, Física, Programación"
+            />
+          </div>
+          <div class="form-group">
+            <label for="perfil-gratuito">Tutorías gratuitas</label>
+            <select id="perfil-gratuito">
+              <option value="0">❌ No</option>
+              <option value="1">✅ Sí</option>
+            </select>
+          </div>
+          <button id="btn-actualizar-perfil" class="btn-primary">
+            Actualizar Perfil
+          </button>
+        </div>
+      </div>
+
+      <!-- Sección 3: Gestionar Horarios -->
+      <div class="horarios-section">
+        <h2>⏰ Mis Horarios Disponibles</h2>
+        <div class="horario-form">
+          <select id="horario-dia">
+            <option value="Lunes">Lunes</option>
+            <option value="Martes">Martes</option>
+            <option value="Miércoles">Miércoles</option>
+            <option value="Jueves">Jueves</option>
+            <option value="Viernes">Viernes</option>
+          </select>
+          <input type="time" id="horario-inicio" placeholder="Hora inicio" />
+          <input type="time" id="horario-fin" placeholder="Hora fin" />
+          <button id="btn-agregar-horario" class="btn-success">
+            Agregar Horario
+          </button>
+        </div>
+        <div id="horarios-container" class="horarios-list"></div>
+      </div>
+    </div>
+
+    <script src="js/tutor.js"></script>
+  </body>
+</html>

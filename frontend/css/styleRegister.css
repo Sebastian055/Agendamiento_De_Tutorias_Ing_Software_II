@@ -1,0 +1,138 @@
+:root {
+  --primary-1: #083e65;
+  --primary-2: #552cb7;
+  --primary-3: #3c75ba;
+  --secondary-1: #ace576;
+  --secondary-2: #ffc74e;
+  --secondary-3: #00aec6;
+  --font-base: "Open Sans", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-base);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  animation: cambiarFondo 20s infinite;
+}
+
+@keyframes cambiarFondo {
+  0% {
+    background-image: url("../img/image3.jpg");
+  }
+  25% {
+    background-image: url("../img/image4.jpg");
+  }
+  50% {
+    background-image: url("../img/image5.jpg");
+  }
+  75% {
+    background-image: url("../img/image6.jpg");
+  }
+  100% {
+    background-image: url("../img/image7.jpg");
+  }
+}
+
+.login-page {
+  width: 100%;
+  max-width: 420px;
+  padding: 20px;
+}
+
+.login-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 32px 24px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.login-card h2 {
+  font-size: 26px;
+  color: var(--primary-1);
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header-img {
+  display: block;
+  width: 120px;
+  margin: 0 auto 20px;
+  border-radius: 12px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 14px;
+  color: var(--primary-1);
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  outline: none;
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-group input {
+  width: auto;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  background: var(--primary-3);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+button:hover {
+  background: var(--primary-1);
+}
+
+.register-prompt {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.register-prompt a {
+  color: var(--primary-2);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-prompt a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Registro – Sistema Tutorías</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styleLogin.css" />
+  </head>
+  <body>
+    <!-- FONDO SLIDER -->
+    <div class="background-slider">
+      <div
+        class="slide active"
+        style="background-image: url(&quot;img/imagen1.jpg&quot;)"
+      ></div>
+      <div
+        class="slide"
+        style="background-image: url(&quot;img/imagen2.jpg&quot;)"
+      ></div>
+      <div
+        class="slide"
+        style="background-image: url(&quot;img/imagen3.jpg&quot;)"
+      ></div>
+    </div>
+
+    <!-- FORMULARIO DE REGISTRO -->
+    <div class="login-page">
+      <div class="login-card">
+        <h2>Nuevo Registro</h2>
+        <img
+          src="img/image2RemoveBg.png"
+          alt="Imagen de bienvenida"
+          class="header-img"
+        />
+
+        <div class="form-group">
+          <label for="reg-role">Perfil</label>
+          <select id="reg-role">
+            <option value="student">Estudiante</option>
+            <option value="admin">Administrador</option>
+            <option value="tutor_student">Tutor - estudiante avanzado</option>
+            <option value="tutor_teacher">Tutor - docente</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="reg-name">Nombre completo</label>
+          <input id="reg-name" type="text" placeholder="Nombre completo" />
+        </div>
+
+        <div class="form-group">
+          <label for="reg-email">Correo institucional</label>
+          <input
+            id="reg-email"
+            type="email"
+            placeholder="ejemplo@pascualbravo.edu.co"
+          />
+        </div>
+
+        <div class="form-group" id="gpa-container" style="display: none">
+          <label for="reg-gpa">Promedio</label>
+          <input
+            id="reg-gpa"
+            type="number"
+            step="0.1"
+            min="0"
+            max="5"
+            placeholder="Promedio (0-5)"
+          />
+        </div>
+
+        <div class="form-group" id="subject-container" style="display: none">
+          <label for="reg-subject">Materia de tutoría</label>
+          <input
+            id="reg-subject"
+            type="text"
+            placeholder="Materia de tutoría"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="reg-pass">Contraseña</label>
+          <input id="reg-pass" type="password" placeholder="••••••••" />
+        </div>
+
+        <div
+          class="form-group checkbox-group"
+          id="free-container"
+          style="display: none"
+        >
+          <input id="reg-free" type="checkbox" checked />
+          <label for="reg-free">Tutorías gratuitas</label>
+        </div>
+
+        <button id="btn-register">Crear cuenta</button>
+
+        <p class="register-prompt">
+          ¿Ya tienes cuenta?
+          <a href="login.html" class="register-link">Inicia sesión aquí</a>
+        </p>
+      </div>
+    </div>
+
+    <script src="js/register.js"></script>
+
+    <script>
+      let slides = document.querySelectorAll(".slide");
+      let current = 0;
+
+      function changeSlide() {
+        slides[current].classList.remove("active");
+        current = (current + 1) % slides.length;
+        slides[current].classList.add("active");
+      }
+
+      setInterval(changeSlide, 5000);
+    </script>
+  </body>
+</html>

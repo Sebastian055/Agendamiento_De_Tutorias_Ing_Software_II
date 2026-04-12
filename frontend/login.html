@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Iniciar sesión – Sistema Tutorías</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styleLogin.css" />
+  </head>
+  <body>
+    <div class="login-page">
+      <div class="login-card">
+        <h2>Iniciar sesión</h2>
+
+        <img
+          src="img/image2RemoveBg.png"
+          alt="Imagen de bienvenida"
+          class="header-img"
+        />
+
+        <div class="form-group">
+          <label for="login-email">Correo institucional</label>
+          <input
+            id="login-email"
+            type="email"
+            placeholder="ejemplo@pascualbravo.edu.co"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="login-pass">Contraseña</label>
+          <input id="login-pass" type="password" placeholder="••••••••" />
+        </div>
+
+        <button id="btn-login">Entrar</button>
+
+        <p class="register-prompt">
+          ¿No tienes cuenta?
+          <a href="register.html">Regístrate aquí</a>
+        </p>
+      </div>
+    </div>
+
+    <script src="js/login.js"></script>
+  </body>
+</html>
